@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <div class="post-text-container">
+        <h1 class="post-title">{{ post.title }}</h1>
+        <p class="ps-3 post-subtitle text-center">{{ post.sub_title }}</p>
+        <p class="published-date text-center">{{ post.published_date }}</p>
+        <p class="body-text">{{ post.body | safe}}</p>
+        <div class="tag-container">
+            {% for tag in post.tags.all %}
+                <p class="tag">{{ tag.name }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,87 @@
+/* base.css */
+
+.nav-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.75em;
+}
+
+.main-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    font-family: 'Courier New', Courier, monospace;
+}
+ /* home page */
+
+.home-main-image {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover; ;
+}
+
+/* Posts */
+.post-link {
+    text-decoration: none;
+    color: black;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+}
+
+.post-subtitle {
+    font-size: 1.5em;
+    font-weight: 200;
+}
+
+.published-date {
+    font-size: 0.75em;
+    font-weight: 200;
+    color: gray;
+}
+
+.tag-container {
+    display: flex;
+}
+
+.tag {
+    margin-right: 10px;
+    padding: 5px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 200;
+}
+/* post.css */
+.post-text-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+}
+.post-title {
+    font-size: 2.25em;
+    font-weight: 700;
+    text-align: center;
+}
+.text-container {
+    font-size: 1.25em;
+    line-height: 1.15em;
+    font-weight: 200;
+    text-align: justify;
+}
+
+.body-text {
+    font-size: 1.25em;
+    line-height: 1.15em;
+    font-weight: 200;
+    text-align: justify;
+}
