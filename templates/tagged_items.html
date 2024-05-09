@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import static %}
+{% block title %}Tagged Items{% endblock %}
+{% block content %}
+    <h1>Tagged Items</h1>
+    <p>Items tagged with <strong>{{ tag }}</strong>:</p>
+    <ul>
+        {% for item in post %}
+            <li><a href="{{ url_for('item', id=item.id) }}">{{ item.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
