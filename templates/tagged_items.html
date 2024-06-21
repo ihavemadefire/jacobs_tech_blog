@@ -2,17 +2,16 @@
 {% load static %}
 {% block title %}Tagged Items{% endblock %}
 {% block content %}
-    <h1>Tagged Items</h1>
     <p>Items tagged with <strong>{{ object }}</strong>:</p>
     <h1>Blog Posts</h1>
     <ul>
         {% for item in post %}
-            <li><a href="{% url 'post_detail' item.slug %}">{{ item.title }}</a></li>
+            <a class="post-link" href="{% url 'post_detail' item.slug %}">{{ item.title }}</a>
         {% endfor %}
     </ul>
     <h1>Writing</h1>
     <ul>
         {% for item in writing %}
-            <li><a href="{% url 'writing_detail' item.slug %}">{{ item.title }}</a></li>
+            <a href="{% url 'writing_detail' item.slug %}">{{ item.title }}</a>
         {% endfor %}
 {% endblock %}

@@ -10,7 +10,7 @@
         <p class="body-text">{{ post.body | safe}}</p>
         <div class="tag-container">
             {% for tag in post.tags.all %}
-                <p class="tag">{{ tag.name }}</p>
+                <a href="{% url 'tag_list' tag.slug %}"><p class="tag">{{ tag.name }}</p></a>
             {% endfor %}
         </div>
     </div>
