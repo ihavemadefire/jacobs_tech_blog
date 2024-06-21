@@ -1,12 +1,18 @@
-{% extends "base.html" %}
-{% import static %}
+{% extends "_base.html" %}
+{% load static %}
 {% block title %}Tagged Items{% endblock %}
 {% block content %}
     <h1>Tagged Items</h1>
-    <p>Items tagged with <strong>{{ tag }}</strong>:</p>
+    <p>Items tagged with <strong>{{ object }}</strong>:</p>
+    <h1>Blog Posts</h1>
     <ul>
         {% for item in post %}
-            <li><a href="{{ url_for('item', id=item.id) }}">{{ item.name }}</a></li>
+            <li><a href="{% url 'post_detail' item.slug %}">{{ item.title }}</a></li>
         {% endfor %}
     </ul>
+    <h1>Writing</h1>
+    <ul>
+        {% for item in writing %}
+            <li><a href="{% url 'writing_detail' item.slug %}">{{ item.title }}</a></li>
+        {% endfor %}
 {% endblock %}

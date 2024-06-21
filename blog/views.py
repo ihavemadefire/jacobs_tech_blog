@@ -33,10 +33,11 @@ class TagDetail(DetailView):
     model = Tag
     template_name = 'tagged_items.html'
     context_object_name = 'tagged'
+    queryset = Tag.objects.all()
     
     def get_context_data(self, **kwargs):
         tagged = super().get_context_data(**kwargs)
-        name = self.get_object().name
-        tagged['post'] = Post.objects.all().filter(name)
-        tagged["writing"] = Writing.objects.all().filter(tags__name=self.get_slug_field)
+        tagged['post'] = Post.objects.all().filter(tags__slug=self.kwargs.get('slug'))
+        tagged["writing"] = Writing.objects.all().filter(tags__slug=self.kwargs.get('slug'))
+        print(tagged)
         return tagged

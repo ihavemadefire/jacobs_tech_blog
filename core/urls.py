@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('', HomePageView.as_view(), name='home'),
-    path('tag/<slug:slug>/', TagDetail.as_view(), name='tag_detail'),
+    path('tag/<slug:slug>/', TagDetail.as_view(), name='tag_list'),
 ]
 
 urlpatterns += [
