@@ -88,3 +88,10 @@
     font-weight: 200;
     text-align: justify;
 }
+
+@media screen and (max-width: 768px) {
+    .post-text-container {
+        max-width: 100%;
+    }
+    
+}
