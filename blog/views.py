@@ -39,5 +39,4 @@ class TagDetail(DetailView):
         tagged = super().get_context_data(**kwargs)
         tagged['post'] = Post.objects.all().filter(tags__slug=self.kwargs.get('slug'))
         tagged["writing"] = Writing.objects.all().filter(tags__slug=self.kwargs.get('slug'))
-        print(tagged)
         return tagged

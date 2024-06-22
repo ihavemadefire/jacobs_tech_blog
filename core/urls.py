@@ -7,7 +7,7 @@ from blog.views import TagDetail
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('moria/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('', HomePageView.as_view(), name='home'),
     path('tag/<slug:slug>/', TagDetail.as_view(), name='tag_list'),
@@ -16,3 +16,9 @@ urlpatterns = [
 urlpatterns += [
     path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns

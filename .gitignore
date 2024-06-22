@@ -1,3 +1,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
+docker-compose-prod.yml
+.env
+.gitignore
