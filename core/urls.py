@@ -9,6 +9,7 @@ from blog.views import TagDetail
 urlpatterns = [
     path('moria/', admin.site.urls),
     path('blog/', include('blog.urls')),
+    path('writing/', include('writing.urls')),
     path('', HomePageView.as_view(), name='home'),
     path('tag/<slug:slug>/', TagDetail.as_view(), name='tag_list'),
 ]

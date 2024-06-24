@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from .models import Post, Tag, Writing
+from .models import Post, Tag
 from django.views.generic import ListView, DetailView
 
 
@@ -14,19 +13,6 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'post.html'
     context_object_name = 'post'
-
-
-class WritingList(ListView):
-    model = Writing
-    template_name = 'writings.html'
-    context_object_name = 'writings'
-    ordering = ['-published_date']
-
-
-class WritingDetail(DetailView):
-    model = Writing
-    template_name = 'writing.html'
-    context_object_name = 'writing'
 
 
 class TagDetail(DetailView):

@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    {% for piece in writing %}
+    <h1><a class="post-link" href="{% url 'piece' piece.slug%}">{{piece.title }}</a></h1>
+    <p class="ps-3 post-subtitle">{{ piece.sub_title }}</p>
+    <p class="published-date">{{ piece.published_date }}</p>
+    <div class="tag-container">
+        {% for tag in piece.tags.all %}
+            <a href="{% url 'tag_list' tag.slug %}"><p class="tag">{{ tag.name }}</p></a>
+        {% endfor %}
+    </div>
+    {% endfor %}
+{% endblock %}
