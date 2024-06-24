@@ -4,10 +4,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from .views import HomePageView
 from blog.views import TagDetail
+import environs
+
+env = environs.Env()
+env.read_env()
 
 
 urlpatterns = [
-    path('moria/', admin.site.urls),
+    path(env('DJANGO_ADMIN_URL'), admin.site.urls),
     path('blog/', include('blog.urls')),
     path('', HomePageView.as_view(), name='home'),
     path('tag/<slug:slug>/', TagDetail.as_view(), name='tag_list'),
