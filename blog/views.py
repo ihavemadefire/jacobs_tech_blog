@@ -1,4 +1,5 @@
 from .models import Post, Tag
+from writing.models import Writing
 from django.views.generic import ListView, DetailView
 
 
