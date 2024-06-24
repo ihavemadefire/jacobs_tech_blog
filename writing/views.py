@@ -11,4 +11,4 @@ class WritingList(ListView):
 class WritingDetail(DetailView):
     model = Writing
     template_name = 'piece.html'
-    context_object_name = 'priece'
+    context_object_name = 'piece'
