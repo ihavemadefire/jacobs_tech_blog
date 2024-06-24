@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <div class="post-text-container">
+        <h1 class="post-title">{{ piece.title }}</h1>
+        <p class="ps-3 post-subtitle text-center">{{ piece.sub_title }}</p>
+        <p class="published-date text-center">{{ piece.published_date }}</p>
+        <p class="body-text">{{ piece.body | safe}}</p>
+        <div class="tag-container">
+            {% for tag in piece.tags.all %}
+                <a href="{% url 'tag_list' tag.slug %}"><p class="tag">{{ tag.name }}</p></a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
