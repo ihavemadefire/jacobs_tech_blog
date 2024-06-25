@@ -11,7 +11,7 @@ env.read_env()
 
 
 urlpatterns = [
-    path(env('DJANGO_ADMIN_URL'), admin.site.urls),
+    path(env('DJANGO_ADMIN_URL',default='admin/'), admin.site.urls),
     path('blog/', include('blog.urls')),
     path('writing/', include('writing.urls')),
     path('', HomePageView.as_view(), name='home'),
