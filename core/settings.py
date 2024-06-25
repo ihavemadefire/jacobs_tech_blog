@@ -34,7 +34,7 @@ LOGGING = {
       'file': {
          'level': 'DEBUG',
          'class': 'logging.FileHandler',
-         'filename': '/tmp/debug.log',
+         'filename': '/code/tmp/debug.log',
       },
    },
    'loggers': {
